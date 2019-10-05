@@ -38,7 +38,7 @@ public class Task01
 		model.write(System.out);
 
 		// ** TASK 1.1: Now write the model in Turtle form **
-		model.write(System.out, "TURTLE");
+		model.write(System.out, "JSON-LD");
 		
 		// ** TASK 1.2: Read a new model and merge it with the previous one **
 		String filename2 = "resources/example2.rdf";

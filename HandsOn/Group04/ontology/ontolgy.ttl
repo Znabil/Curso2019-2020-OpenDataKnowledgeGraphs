@@ -1,0 +1,86 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.smart-city.GP-LDATA.org/> a owl:Ontology .
+<http://www.smart-city.GP-LDATA.org/AtRoadClass>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/accidentOccuredAt>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/accidentOccuredIn> a owl:ObjectProperty .
+<http://www.smart-city.GP-LDATA.org/hasAgeCasualy>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/hasCasualtySeverity>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/hasCausualtyClass>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/hasEasting>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://www.smart-city.GP-LDATA.org/Location> .
+
+<http://www.smart-city.GP-LDATA.org/hasLightingCondition>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/hasNorthing>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  rdfs:domain <http://www.smart-city.GP-LDATA.org/Location> .
+
+<http://www.smart-city.GP-LDATA.org/hasNumberOfVehicles> a owl:ObjectProperty .
+<http://www.smart-city.GP-LDATA.org/hasRefNumber>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/hasRoadSurface>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/hasSexCasualty>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/hasTypeOfVehicle>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/hasWeatherCondition>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.smart-city.GP-LDATA.org/numberVehcile>
+  a owl:DatatypeProperty ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+  rdfs:domain <http://www.smart-city.GP-LDATA.org/Vehicle> ;
+  rdfs:range xsd:int .
+
+<http://www.smart-city.GP-LDATA.org/Casualty>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.smart-city.GP-LDATA.org/Property> .
+
+<http://www.smart-city.GP-LDATA.org/Location>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.smart-city.GP-LDATA.org/Property> .
+
+<http://www.smart-city.GP-LDATA.org/Property>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.smart-city.GP-LDATA.org/RoadTrafficAccidents> .
+
+<http://www.smart-city.GP-LDATA.org/Road>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.smart-city.GP-LDATA.org/Property> .
+
+<http://www.smart-city.GP-LDATA.org/RoadTrafficAccidents> a owl:Class .
+<http://www.smart-city.GP-LDATA.org/Vehicle>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.smart-city.GP-LDATA.org/Property> .

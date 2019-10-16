@@ -46,7 +46,7 @@ body {
   margin-left: 200px; /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
-}
+
 
 /* Add an active class to the active dropdown button */
 .active {
@@ -104,32 +104,48 @@ body {
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-  	<a href="#Dataset">Dataset Table </a>
-    <a href="#Datasetschema">Dataset schema analysis</a>
+  	<a href="#Dataset" onclick="enableframe('mainDataset')" >Dataset Table </a>
+    <a href="#Datasetschema" onclick="enableframe('mainDatasetschema')">Dataset schema analysis</a>
   </div>
-  <a href="#License">License Information</a>
-  <a href="#Resource">resource naming strategy</a>
-    <a href="#About">About the group</a>
+  <a href="#License" onclick="enableframe('mainLicense')" >License Information</a>
+  <a href="#Resource" onclick="enableframe('mainResource')" >resource naming strategy</a>
+    <a href="#About" onclick="enableframe('mainAbout')" >About the group</a>
 </div>
-
 <div class="main">
-  
+<div class="mainLicense" style="display:none;" >
   	<h2 id="License" target="_blank">License Information analysis </h2>
-    <iframe style="border-style: none;" src="analysis_files/licence.htm" height=570px width=100%></iframe>
-
-    <h2 id="Dataset" target="_blank">Dataset table </h2>
-    <iframe style="border-style: none;" src="analysis_files/Leeds_RTC_2017.html" height=570px width=100%></iframe>
-    
-
-    <h2 id="Datasetschema" target="_blank">Dataset schema analysis </h2>
-    <iframe style="border-style: none;" src="analysis_files/table analysis.html" height=570px width=100%></iframe>
-	
-	<h2 id="Resource" target="_blank">Resource naming strategy </h2>
-    <iframe style="border-style: none;" src="analysis_files/Resource naming strategy.htm" height=570px width=100%></iframe>
-
-    <h2 id="About" target="_blank"> </h2>
-    <iframe style="border-style: none;" src="analysis_files/about us.htm" height=570px width=100%></iframe>
+    <iframe  id="Licenseframe"  src="analysis_files/licence.htm" height=570px width=100%></iframe>
 </div>
+<div class="mainDataset" style="display:none;" >
+    <h2 id="Dataset" target="_blank">Dataset table </h2>
+    <iframe id="Datasetframe"  src="analysis_files/DatasetTable.html" height=570px width=100%></iframe>
+</div>
+<div class="mainDatasetschema" style="display:none;" >
+    <h2 id="Datasetschema" target="_blank">Dataset schema analysis </h2>
+    <iframe id="Datasetschemaframe"  src="analysis_files/DatasetAnalysis.html" height=570px width=100%></iframe>
+</div>
+<div class="mainResource" style="display:none;" >
+	<h2 id="Resource" target="_blank">Resource naming strategy </h2>
+    <iframe id="Resourceframe"  src="analysis_files/Resource naming strategy.htm" height=570px width=100%></iframe>
+</div>
+<div class="mainAbout" style="display:none;" >
+    <h2 id="About" target="_blank"> </h2>
+    <iframe id="Aboutframe"  src="analysis_files/about us.htm" height=570px width=100%></iframe>
+</div>
+</div>
+<script>
+/* enabling iframe License*/
+function enableframe(sframe) {
+
+var elems = document.getElementsByClassName(sframe);
+for (var i= 0;i<elems.length;i+= 1){
+
+  elems[i].style.display = 'block';
+
+}
+}
+
+</script>
 
 <script>
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */

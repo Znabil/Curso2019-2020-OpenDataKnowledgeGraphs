@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+            div.sticky {
+              position: -webkit-sticky;
+              position: sticky;
+              top: 0;
+              width: 100%;
+              background-color: rgba(221, 221, 221, 1);
+              padding: 12px;
+              font-size: 14px;
+            }
+            </style>
+      <title>CSV To HTML </title>
+      <link rel="stylesheet" href="./css/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script type="text/javascript" src="./js/progbar.js"></script>
+      <script type="text/javascript" LANGUAGE="JavaScript" src="./js/importcsv.js"></script>
+      <script type="text/javascript" src="./js/filtre.js"></script>
+  </head>
+<body>
+    <div class="sticky">
+            <div  class="row">                    
+                    <div class="col-sm-3" >
+                            <input type="file" id="fileUpload" />
+                            <input type="button" id="upload" value="Upload" />
+                            <div id="myBar"> </div> 
+                    </div>                
+                    <div class="col-sm-6" >
+                        <input type="text" id="myInput" onkeydown="myFunction(1)" placeholder="Search for ..">
+                        <p>Please select filtre to apply:</p>
+                        <input type="radio" name="filtre" onchange="myFunction(1);" value="Hospital Name"> Hospital Name
+                        <input type="radio" name="filtre" onchange="myFunction(4);" value="City"> City
+                        <input type="radio" name="filtre" onchange="myFunction(6);" value="State"> State
+                        <input type="radio" name="filtre" onchange="myFunction(9);" value="County Name"> County <br>
+                        <input type="radio" name="filtre" onchange="myFunction(12);" value="Hospital Type"> Hospital Type
+                        <input type="radio" name="filtre" onchange="myFunction(13);" value="Hospital Ownership"> Hospital Ownership
+                        <input type="radio" name="filtre" onchange="myFunction(14);" value="Emergency Services"> Emergency Services
+                        <input type="radio" name="filtre" onchange="myFunction(16);" value="Hospital overall rating"> Hospital overall rating<br>
+                    </div>                       
+            </div>
+    </div> 
+    
+    <div id='dvCSV'></div>
+<script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+               .register("./sw.js")
+               .then(function() { console.log("Service Worker Registered"); });
+    }
+</script>     
+</body>
+</html>
